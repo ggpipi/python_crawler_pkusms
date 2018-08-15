@@ -36,7 +36,7 @@ def parse(text):
             movie_list = soup.find_all('div', class_='subDoctor_state_info')
             for movie in movie_list:
                 mydict = {}
-                if movie.find('h3').text != '姚方':
+                if movie.find('h3').text != '姚方':  #这老师信息出了点问题，跳过
                     mydict['name'] = movie.find('h3').text
                     mydict['zhiwei'] = movie.find('i').text if movie.find('i').text else None
                     email = movie.find_all('p')[2].text
